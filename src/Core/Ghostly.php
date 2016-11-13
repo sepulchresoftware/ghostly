@@ -12,7 +12,7 @@ namespace Ghostly\Core;
 
 use Ghostly\Exceptions\CannotConnectToDatabaseException;
 
-use \PDO;
+use PDO;
 use PDOException;
 
 class Ghostly
@@ -32,6 +32,8 @@ class Ghostly
 
 	/**
 	 * Constructs a new Ghostly object with the specified database connection parameters.
+	 * If no parameters are specified explicitly, the configuration for the connection is
+	 * read from values in the $_ENV superglobal.
 	 *
 	 * @param string $host The optional database server host name or IP
 	 * @param int $port The optional port number for the database server
@@ -48,14 +50,14 @@ class Ghostly
 		$pass=null,
 		$persistent=true
 	) {
-		// do the configuration values have actual configuration parameters or
-		// are they just the defaults?
+		// do we have default configuration parameters or were values explicitly
+		// specified?
 		if(empty($host) &&
 			empty($port) &&
 			empty($database) &&
 			empty($user) &&
 			empty($pass)) {
-			// read the configuration values from the $_ENV superglobal
+			// read the configuration values from the $_ENV superglobal instead
 			$this->host = $_ENV['DATABASE_HOST'];
 			$this->port = $_ENV['DATABASE_PORT'];
 			$this->database = $_ENV['DATABASE_NAME'];

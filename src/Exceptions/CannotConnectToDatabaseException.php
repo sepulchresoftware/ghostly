@@ -9,7 +9,7 @@
 
 namespace Ghostly\Exceptions;
 
-use \Exception;
+use Exception;
 
 class CannotConnectToDatabaseException extends Exception
 {
