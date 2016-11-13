@@ -13,7 +13,7 @@ namespace Ghostly\Core;
 use Ghostly\Exceptions\CannotConnectToDatabaseException;
 
 use \PDO;
-use \PDOException;
+use PDOException;
 
 class Ghostly
 {
@@ -33,26 +33,45 @@ class Ghostly
 	/**
 	 * Constructs a new Ghostly object with the specified database connection parameters.
 	 *
-	 * @param string $host The database server host name or IP
-	 * @param int $port The port number for the database server
-	 * @param string $database The name of the database to use
+	 * @param string $host The optional database server host name or IP
+	 * @param int $port The optional port number for the database server
+	 * @param string $database The optional name of the database to use
 	 * @param string $user The optional username to provide for database server authentication
 	 * @param string $pass The optional password to provide for database server authentication
 	 * @param boolean $persistent The optional parameter for a persistent connection
 	 */
 	public function __construct(
-		$host,
-		$port,
-		$database,
+		$host="",
+		$port="",
+		$database="",
 		$user=null,
 		$pass=null,
 		$persistent=true
 	) {
-		$this->host = $host;
-		$this->port = $port;
-		$this->database = $database;
-		$this->user = $user;
-		$this->pass = $pass;
+		// do the configuration values have actual configuration parameters or
+		// are they just the defaults?
+		if(empty($host) &&
+			empty($port) &&
+			empty($database) &&
+			empty($user) &&
+			empty($pass)) {
+			// read the configuration values from the $_ENV superglobal
+			$this->host = $_ENV['DATABASE_HOST'];
+			$this->port = $_ENV['DATABASE_PORT'];
+			$this->database = $_ENV['DATABASE_NAME'];
+			$this->user = $_ENV['DATABASE_USER'];
+			$this->pass = $_ENV['DATABASE_PASS'];
+		}
+		else
+		{
+			$this->host = $host;
+			$this->port = $port;
+			$this->database = $database;
+			$this->user = $user;
+			$this->pass = $pass;
+		}
+
+		// should the database connection be persistent?
 		$this->persistent = $persistent;
 
 		// try to create a database connection
