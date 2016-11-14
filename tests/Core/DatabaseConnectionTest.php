@@ -22,7 +22,7 @@ class DatabaseConnectionTest extends TestCase
 	 */
 	public function database_connection_is_open() {
 		// use default database configuration from $_ENV superglobal
-		$orm = new Ghostly();
+		$orm = Ghostly::fromConnectionDefaults();
 		$this->assertNotEmpty($orm);
 		$orm->close();
 	}
@@ -32,7 +32,7 @@ class DatabaseConnectionTest extends TestCase
 	 */
 	public function invalid_database_connection_throws_exception() {
 		try {
-			$bad = new Ghostly(
+			$bad = Ghostly::fromConnection(
 				$_ENV['DATABASE_HOST'],
 				$_ENV['DATABASE_PORT'],
 				'ghostly-database-does-not-exist',

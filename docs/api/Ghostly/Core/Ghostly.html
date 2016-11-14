@@ -97,16 +97,6 @@ as well as communication with the database server using PDO.</p>        </div>
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $host = &#039;&#039;, int $port = &#039;&#039;, string $database = &#039;&#039;, string $user = null, string $pass = null, boolean $persistent = true)
-        
-                                            <p>Constructs a new Ghostly object with the specified database connection parameters.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
                     
                 </div>
                 <div class="col-md-8 type">
@@ -116,6 +106,27 @@ as well as communication with the database server using PDO.</p>        </div>
 does nothing.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;<a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_fromConnectionDefaults">fromConnectionDefaults</a>()
+        
+                                            <p>Returns a new Ghostly object. The database connection values are the defaults
+from the $_ENV superglobal.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;<a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_fromConnection">fromConnection</a>(string $host = &#039;&#039;, int $port = &#039;&#039;, string $database = &#039;&#039;, string $user = null, string $pass = null, boolean $persistent = true)
+        
+                                            <p>Returns a new Ghostly object with the specified database connection parameters.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -123,10 +134,10 @@ does nothing.</p>                </div>
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at line         line 96</div>
-        <code>                    <a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a>
-    <strong>__construct</strong>(string $host = &#039;&#039;, int $port = &#039;&#039;, string $database = &#039;&#039;, string $user = null, string $pass = null, boolean $persistent = true)
+                    <h3 id="method_close">
+        <div class="location">at line         line 153</div>
+        <code>                    
+    <strong>close</strong>()
         </code>
     </h3>
     <div class="details">
@@ -134,7 +145,60 @@ does nothing.</p>                </div>
     
 
                     <div class="method-description">
-                                    <p>Constructs a new Ghostly object with the specified database connection parameters.</p>                    <p>If no parameters are specified explicitly, the configuration for the connection is
+                                    <p>Closes the open database connection. If a connection is not open this method
+does nothing.</p>                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_fromConnectionDefaults">
+        <div class="location">at line         line 165</div>
+        <code>        static            <a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a>
+    <strong>fromConnectionDefaults</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Returns a new Ghostly object. The database connection values are the defaults
+from the $_ENV superglobal.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_fromConnection">
+        <div class="location">at line         line 183</div>
+        <code>        static            <a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a>
+    <strong>fromConnection</strong>(string $host = &#039;&#039;, int $port = &#039;&#039;, string $database = &#039;&#039;, string $user = null, string $pass = null, boolean $persistent = true)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Returns a new Ghostly object with the specified database connection parameters.</p>                    <p>If no parameters are specified explicitly, the configuration for the connection is
 read from values in the $_ENV superglobal.</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
@@ -182,28 +246,6 @@ read from values in the $_ENV superglobal.</p>            </div>
         </tr>
     </table>
 
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_close">
-        <div class="location">at line         line 153</div>
-        <code>                    
-    <strong>close</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Closes the open database connection. If a connection is not open this method
-does nothing.</p>                                </div>
-                <div class="tags">
-            
             
             
                     </div>

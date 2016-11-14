@@ -93,7 +93,7 @@ class Ghostly
 	 *
 	 * @return Ghostly
 	 */
-	public function __construct(
+	protected function __construct(
 		$host="",
 		$port="",
 		$database="",
@@ -154,6 +154,48 @@ class Ghostly
 		if(!empty($this->pdo)) {
 			$this->pdo = null;
 		}
+	}
+
+	/**
+	 * Returns a new Ghostly object. The database connection values are the defaults
+	 * from the $_ENV superglobal.
+	 *
+	 * @return Ghostly
+	 */
+	public static function fromConnectionDefaults() {
+		return new self();
+	}
+
+	/**
+	 * Returns a new Ghostly object with the specified database connection parameters.
+	 * If no parameters are specified explicitly, the configuration for the connection is
+	 * read from values in the $_ENV superglobal.
+	 *
+	 * @param string $host The optional database server host name or IP
+	 * @param int $port The optional port number for the database server
+	 * @param string $database The optional name of the database to use
+	 * @param string $user The optional username to provide for database server authentication
+	 * @param string $pass The optional password to provide for database server authentication
+	 * @param boolean $persistent The optional parameter for a persistent connection
+	 *
+	 * @return Ghostly
+	 */
+	public static function fromConnection(
+		$host="",
+		$port="",
+		$database="",
+		$user=null,
+		$pass=null,
+		$persistent=true
+	) {
+		return new self(
+			$host,
+			$port,
+			$database,
+			$user,
+			$pass,
+			$persistent
+		);
 	}
 
 	/**
