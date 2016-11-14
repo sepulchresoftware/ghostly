@@ -1,5 +1,5 @@
 {
-    "name": "sepulchresoftware/ghostly-orm",
+    "name": "sepulchresoftware/ghostly",
     "description": "An ORM (Object-Relational Mapping) for your MySQL data",
     "type": "library",
     "license": "MIT",
