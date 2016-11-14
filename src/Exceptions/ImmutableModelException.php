@@ -8,7 +8,7 @@
 
 namespace Ghostly\Exceptions;
 
-use Exception;
+use Ghostly\Exceptions\GhostlyException;
 
 /**
  * This class represents an exception that is thrown when a read-only model in
@@ -18,7 +18,7 @@ use Exception;
  *
  * @author Matthew Fritz <mattf@burbankparanormal.com>
  */
-class ImmutableModelException extends Exception
+class ImmutableModelException extends GhostlyException
 {
 	/**
 	 * Constructs a new ImmutableModelException object with an optional message.

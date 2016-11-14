@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Ghostly\Exceptions\CannotConnectToDatabaseException | Ghostly ORM API</title>
+    <title>Ghostly\Exceptions\GhostlyException | Ghostly ORM API</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Ghostly_Exceptions_CannotConnectToDatabaseException" data-root-path="../../">
+    <body id="class" data-name="class:Ghostly_Exceptions_GhostlyException" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,29 +66,29 @@
                                                             <li><a href="../../Ghostly.html">Ghostly</a></li>
                                         <li><a href="../../Ghostly/Exceptions.html">Exceptions</a></li>
     
-                <li>CannotConnectToDatabaseException</li>
+                <li>GhostlyException</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            CannotConnectToDatabaseException
+            GhostlyException
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>CannotConnectToDatabaseException</strong>        extends <a href="../../Ghostly/Exceptions/GhostlyException.html"><abbr title="Ghostly\Exceptions\GhostlyException">GhostlyException</abbr></a>
+    <strong>GhostlyException</strong>        extends <a target="_blank" href="http://php.net/Exception">Exception</a>
 </p>
 
         
     
 
             <div class="description">
-            <p>This class represents an exception that is thrown when the Ghostly ORM cannot
-connect to the configured database environment.</p>            <p>The class is typically used to report the message from a PDOException but it
-is explicitly used during connection failure.</p>        </div>
+            <p>This class represents a base exception that should be the parent class of all
+other exceptions within the Ghostly ORM.</p>            <p>Developers can catch this exception if they are not concerned with what kind
+of exception is thrown, but rather just that an exception was thrown.</p>        </div>
     
     
     
@@ -101,10 +101,9 @@ is explicitly used during connection failure.</p>        </div>
                     <a href="../../Ghostly/Exceptions/GhostlyException.html"><abbr title="Ghostly\Exceptions\GhostlyException">GhostlyException</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $message = &#039;Cannot connect to database&#039;)
+                    <a href="#method___construct">__construct</a>(string $message)
         
-                                            <p>Constructs a new CannotConnectToDatabaseException object with an optional
-message.</p>                </div>
+                                            <p>Constructs a new GhostlyException object with a message.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -115,9 +114,9 @@ message.</p>                </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         line 32</div>
+        <div class="location">at line         line 31</div>
         <code>                    <a href="../../Ghostly/Exceptions/GhostlyException.html"><abbr title="Ghostly\Exceptions\GhostlyException">GhostlyException</abbr></a>
-    <strong>__construct</strong>(string $message = &#039;Cannot connect to database&#039;)
+    <strong>__construct</strong>(string $message)
         </code>
     </h3>
     <div class="details">
@@ -125,8 +124,7 @@ message.</p>                </div>
     
 
                     <div class="method-description">
-                                    <p>Constructs a new CannotConnectToDatabaseException object with an optional
-message.</p>                                </div>
+                                    <p>Constructs a new GhostlyException object with a message.</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 

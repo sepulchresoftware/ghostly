@@ -8,7 +8,7 @@
 
 namespace Ghostly\Exceptions;
 
-use Exception;
+use Ghostly\Exceptions\GhostlyException;
 
 /**
  * This class represents an exception that is thrown when the Ghostly ORM cannot
@@ -19,7 +19,7 @@ use Exception;
  *
  * @author Matthew Fritz <mattf@burbankparanormal.com>
  */
-class CannotConnectToDatabaseException extends Exception
+class CannotConnectToDatabaseException extends GhostlyException
 {
 	/**
 	 * Constructs a new CannotConnectToDatabaseException object with an optional

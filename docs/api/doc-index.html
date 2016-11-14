@@ -73,7 +73,7 @@
                                                 <li class="disabled"><a href="#letterD">D</a></li>
                                                 <li class="disabled"><a href="#letterE">E</a></li>
                                                 <li><a href="#letterF">F</a></li>
-                                                <li class="disabled"><a href="#letterG">G</a></li>
+                                                <li><a href="#letterG">G</a></li>
                                                 <li class="disabled"><a href="#letterH">H</a></li>
                                                 <li class="disabled"><a href="#letterI">I</a></li>
                                                 <li class="disabled"><a href="#letterJ">J</a></li>
@@ -112,7 +112,9 @@ parent class for all read/write data operations.</dd>        </dl><h2 id="letter
 from the $_ENV superglobal.</dd><dt><a href="Ghostly/Core/Ghostly.html#method_fromConnection"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr>::fromConnection</a>() &mdash; <em>Method in class <a href="Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a></em></dt>
                     <dd>Returns a new Ghostly object with the specified database connection parameters.</dd>        </dl><h2 id="letterG">G</h2>
         <dl id="index"><dt><a href="Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a> &mdash; <em>Class in namespace <a href="Ghostly/Core.html">Ghostly\Core</a></em></dt>
-                    <dd>This class is the base from which the data models will extend.</dd>        </dl><h2 id="letterI">I</h2>
+                    <dd>This class is the base from which the data models will extend.</dd><dt><a href="Ghostly/Exceptions/GhostlyException.html"><abbr title="Ghostly\Exceptions\GhostlyException">GhostlyException</abbr></a> &mdash; <em>Class in namespace <a href="Ghostly/Exceptions.html">Ghostly\Exceptions</a></em></dt>
+                    <dd>This class represents a base exception that should be the parent class of all
+other exceptions within the Ghostly ORM.</dd>        </dl><h2 id="letterI">I</h2>
         <dl id="index"><dt><a href="Ghostly/Exceptions/ImmutableModelException.html"><abbr title="Ghostly\Exceptions\ImmutableModelException">ImmutableModelException</abbr></a> &mdash; <em>Class in namespace <a href="Ghostly/Exceptions.html">Ghostly\Exceptions</a></em></dt>
                     <dd>This class represents an exception that is thrown when a read-only model in
 the Ghostly ORM attempts to perform write operations.</dd>        </dl><h2 id="letterR">R</h2>
@@ -126,7 +128,8 @@ operations with this class will throw instances of ImmutableModelException.</dd>
                     <dd>Constructs a new ReadModel instance.</dd><dt><a href="Ghostly/Data/ReadModel.html#method___set"><abbr title="Ghostly\Data\ReadModel">ReadModel</abbr>::__set</a>() &mdash; <em>Method in class <a href="Ghostly/Data/ReadModel.html"><abbr title="Ghostly\Data\ReadModel">ReadModel</abbr></a></em></dt>
                     <dd>Magic method overridden to prevent mutability.</dd><dt><a href="Ghostly/Exceptions/CannotConnectToDatabaseException.html#method___construct"><abbr title="Ghostly\Exceptions\CannotConnectToDatabaseException">CannotConnectToDatabaseException</abbr>::__construct</a>() &mdash; <em>Method in class <a href="Ghostly/Exceptions/CannotConnectToDatabaseException.html"><abbr title="Ghostly\Exceptions\CannotConnectToDatabaseException">CannotConnectToDatabaseException</abbr></a></em></dt>
                     <dd>Constructs a new CannotConnectToDatabaseException object with an optional
-message.</dd><dt><a href="Ghostly/Exceptions/ImmutableModelException.html#method___construct"><abbr title="Ghostly\Exceptions\ImmutableModelException">ImmutableModelException</abbr>::__construct</a>() &mdash; <em>Method in class <a href="Ghostly/Exceptions/ImmutableModelException.html"><abbr title="Ghostly\Exceptions\ImmutableModelException">ImmutableModelException</abbr></a></em></dt>
+message.</dd><dt><a href="Ghostly/Exceptions/GhostlyException.html#method___construct"><abbr title="Ghostly\Exceptions\GhostlyException">GhostlyException</abbr>::__construct</a>() &mdash; <em>Method in class <a href="Ghostly/Exceptions/GhostlyException.html"><abbr title="Ghostly\Exceptions\GhostlyException">GhostlyException</abbr></a></em></dt>
+                    <dd>Constructs a new GhostlyException object with a message.</dd><dt><a href="Ghostly/Exceptions/ImmutableModelException.html#method___construct"><abbr title="Ghostly\Exceptions\ImmutableModelException">ImmutableModelException</abbr>::__construct</a>() &mdash; <em>Method in class <a href="Ghostly/Exceptions/ImmutableModelException.html"><abbr title="Ghostly\Exceptions\ImmutableModelException">ImmutableModelException</abbr></a></em></dt>
                     <dd>Constructs a new ImmutableModelException object with an optional message.</dd>        </dl>            </div>
                 <div id="footer">
         Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
