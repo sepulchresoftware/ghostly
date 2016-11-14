@@ -1,6 +1,6 @@
 {
     "name": "sepulchresoftware/ghostly",
-    "description": "An ORM (Object-Relational Mapping) for your MySQL data",
+    "description": "A PHP ORM (Object-Relational Mapping) for your MySQL data",
     "type": "library",
     "license": "MIT",
     "authors": [
