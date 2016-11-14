@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Ghostly\Core\Ghostly | Ghostly ORM API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Ghostly_Core_Ghostly" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Ghostly ORM API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../Ghostly.html">Ghostly</a></li>
+                                        <li><a href="../../Ghostly/Core.html">Core</a></li>
+    
+                <li>Ghostly</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Ghostly
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Ghostly</strong>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>This class is the base from which the data models will extend.</p>            <p>This class also handles the creation of the persistent database connection
+as well as communication with the database server using PDO.</p>        </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(string $host = &#039;&#039;, int $port = &#039;&#039;, string $database = &#039;&#039;, string $user = null, string $pass = null, boolean $persistent = true)
+        
+                                            <p>Constructs a new Ghostly object with the specified database connection parameters.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_close">close</a>()
+        
+                                            <p>Closes the open database connection. If a connection is not open this method
+does nothing.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at line         line 96</div>
+        <code>                    <a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a>
+    <strong>__construct</strong>(string $host = &#039;&#039;, int $port = &#039;&#039;, string $database = &#039;&#039;, string $user = null, string $pass = null, boolean $persistent = true)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructs a new Ghostly object with the specified database connection parameters.</p>                    <p>If no parameters are specified explicitly, the configuration for the connection is
+read from values in the $_ENV superglobal.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$host</td>
+                <td>The optional database server host name or IP</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$port</td>
+                <td>The optional port number for the database server</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$database</td>
+                <td>The optional name of the database to use</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$user</td>
+                <td>The optional username to provide for database server authentication</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$pass</td>
+                <td>The optional password to provide for database server authentication</td>
+            </tr>
+                    <tr>
+                <td>boolean</td>
+                <td>$persistent</td>
+                <td>The optional parameter for a persistent connection</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_close">
+        <div class="location">at line         line 153</div>
+        <code>                    
+    <strong>close</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Closes the open database connection. If a connection is not open this method
+does nothing.</p>                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

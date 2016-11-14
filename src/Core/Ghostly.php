@@ -1,11 +1,9 @@
 <?php
 
 /**
- * This class is the base from which the data models will extend. This class also
- * handles the creation of the persistent database connection as well as communication
- * with the database server using PDO.
+ * Contains the root of the Ghostly ORM.
  *
- * @author Matthew Fritz <mattf@burbankparanormal.com>
+ * @author Matthew Fritz <mattf@burbankpranormal.com>
  */
 
 namespace Ghostly\Core;
@@ -15,19 +13,70 @@ use Ghostly\Exceptions\CannotConnectToDatabaseException;
 use PDO;
 use PDOException;
 
+/**
+ * This class is the base from which the data models will extend.
+ *
+ * This class also handles the creation of the persistent database connection
+ * as well as communication with the database server using PDO.
+ *
+ * @author Matthew Fritz <mattf@burbankparanormal.com>
+ */
 class Ghostly
 {
+	/**
+	 * The database environment host.
+	 *
+	 * @var string
+	 */
 	private $host;
+
+	/**
+	 * The database environment port.
+	 *
+	 * @var int
+	 */
 	private $port;
+
+	/**
+	 * The database environment database name.
+	 *
+	 * @var string
+	 */
 	private $database;
+
+	/**
+	 * The database environment username.
+	 *
+	 * @var string
+	 */
 	private $user;
+
+	/**
+	 * The database environment password.
+	 *
+	 * @var string
+	 */
 	private $pass;
+
+	/**
+	 * The database environment flag for persistent connections.
+	 *
+	 * @var boolean
+	 */
 	private $persistent;
 
-	// the actual database connection through PDO
+	/**
+	 * The actual underlying PDO connection.
+	 *
+	 * @var PDO
+	 */
 	private $pdo;
 
-	// the query string that will be executed
+	/**
+	 * The query string that will be executed.
+	 *
+	 * @var string
+	 */
 	private $query_string;
 
 	/**
@@ -41,6 +90,8 @@ class Ghostly
 	 * @param string $user The optional username to provide for database server authentication
 	 * @param string $pass The optional password to provide for database server authentication
 	 * @param boolean $persistent The optional parameter for a persistent connection
+	 *
+	 * @return Ghostly
 	 */
 	public function __construct(
 		$host="",
