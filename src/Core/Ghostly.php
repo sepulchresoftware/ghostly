@@ -19,7 +19,7 @@ use PDOException;
  * This class also handles the creation of the persistent database connection
  * as well as communication with the database server using PDO.
  *
- * Finally, this class implements the Singleton design pattern.
+ * Finally, this class implements the following design patterns: Singleton, Decorator.
  *
  * @author Matthew Fritz <mattf@burbankparanormal.com>
  */
