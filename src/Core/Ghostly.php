@@ -19,7 +19,7 @@ use PDOException;
  * This class also handles the creation of the persistent database connection
  * as well as communication with the database server using PDO.
  *
- * Finally, this class implements the following design patterns: Singleton, Decorator.
+ * Finally, this class implements the following design patterns: Decorator, Factory, Singleton.
  *
  * @author Matthew Fritz <mattf@burbankparanormal.com>
  */
@@ -102,7 +102,7 @@ class Ghostly
 	 *
 	 * @return Ghostly
 	 */
-	protected function __construct(
+	private function __construct(
 		$host="",
 		$port="",
 		$database="",
