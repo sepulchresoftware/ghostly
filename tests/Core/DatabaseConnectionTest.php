@@ -24,7 +24,11 @@ class DatabaseConnectionTest extends TestCase
 		// use default database configuration from $_ENV superglobal
 		$orm = Ghostly::fromConnectionDefaults();
 		$this->assertNotEmpty($orm);
+		$this->assertTrue($orm->hasActiveConnection());
+
+		// close and verify there is no longer an active connection
 		$orm->close();
+		$this->assertFalse($orm->hasActiveConnection());
 	}
 
 	/**
