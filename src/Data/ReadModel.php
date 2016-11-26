@@ -13,8 +13,10 @@ use Ghostly\Exceptions\ImmutableModelException;
 
 /**
  * This class is the read-only data representation. This should be used as the
- * parent class for all read-only data operations. Attempting to perform write
- * operations with this class will throw instances of ImmutableModelException.
+ * parent class for all read-only data operations.
+ *
+ * Attempting to perform write operations with this class will throw instances
+ * of ImmutableModelException.
  *
  * This class subclasses from BaseModel.
  *
@@ -38,6 +40,8 @@ class ReadModel extends BaseModel
 	 * @param mixed $value The value of the variable to set
 	 *
 	 * @throws ImmutableModelException
+	 *
+	 * @return void
 	 */
 	public function __set($name, $value) {
 		throw new ImmutableModelException(

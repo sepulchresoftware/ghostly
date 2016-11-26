@@ -28,6 +28,13 @@ class BaseModel
 	protected $ghostly;
 
 	/**
+	 * Array containing the inaccessible/dynamic properties of the data models.
+	 *
+	 * @var array
+	 */
+	protected $data;
+
+	/**
 	 * Constructs a new BaseModel instance.
 	 *
 	 * @return BaseModel

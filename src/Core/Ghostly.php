@@ -19,10 +19,19 @@ use PDOException;
  * This class also handles the creation of the persistent database connection
  * as well as communication with the database server using PDO.
  *
+ * Finally, this class implements the Singleton design pattern.
+ *
  * @author Matthew Fritz <mattf@burbankparanormal.com>
  */
 class Ghostly
 {
+	/**
+	 * The instance of the Ghostly ORM for the Singleton pattern.
+	 *
+	 * @var Ghostly
+	 */
+	private static $instance = null;
+
 	/**
 	 * The database environment host.
 	 *
@@ -149,27 +158,42 @@ class Ghostly
 	/**
 	 * Closes the open database connection. If a connection is not open this method
 	 * does nothing.
+	 *
+	 * @return void
 	 */
 	public function close() {
 		if(!empty($this->pdo)) {
 			$this->pdo = null;
 		}
+
+		// clear out the instance
+		self::$instance = null;
 	}
 
 	/**
 	 * Returns a new Ghostly object. The database connection values are the defaults
 	 * from the $_ENV superglobal.
 	 *
+	 * Once the Ghostly object has been returned, no new Ghostly objects can be created
+	 * until the close() method has been invoked.
+	 *
 	 * @return Ghostly
 	 */
 	public static function fromConnectionDefaults() {
-		return new self();
+		if(is_null(self::$instance)) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
 	}
 
 	/**
 	 * Returns a new Ghostly object with the specified database connection parameters.
 	 * If no parameters are specified explicitly, the configuration for the connection is
 	 * read from values in the $_ENV superglobal.
+	 *
+	 * Once the Ghostly object has been returned, no new Ghostly objects can be created
+	 * until the close() method has been invoked.
 	 *
 	 * @param string $host The optional database server host name or IP
 	 * @param int $port The optional port number for the database server
@@ -188,14 +212,18 @@ class Ghostly
 		$pass=null,
 		$persistent=true
 	) {
-		return new self(
-			$host,
-			$port,
-			$database,
-			$user,
-			$pass,
-			$persistent
-		);
+		if(is_null(self::$instance)) {
+			return new self(
+				$host,
+				$port,
+				$database,
+				$user,
+				$pass,
+				$persistent
+			);
+		}
+
+		return self::$instance;
 	}
 
 	/**

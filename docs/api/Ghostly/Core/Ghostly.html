@@ -87,7 +87,9 @@
 
             <div class="description">
             <p>This class is the base from which the data models will extend.</p>            <p>This class also handles the creation of the persistent database connection
-as well as communication with the database server using PDO.</p>        </div>
+as well as communication with the database server using PDO.</p>
+
+<p>Finally, this class implements the Singleton design pattern.</p>        </div>
     
     
     
@@ -97,7 +99,7 @@ as well as communication with the database server using PDO.</p>        </div>
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    void
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_close">close</a>()
@@ -135,8 +137,8 @@ from the $_ENV superglobal.</p>                </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_close">
-        <div class="location">at line         line 153</div>
-        <code>                    
+        <div class="location">at line         line 164</div>
+        <code>                    void
     <strong>close</strong>()
         </code>
     </h3>
@@ -149,6 +151,15 @@ from the $_ENV superglobal.</p>                </div>
 does nothing.</p>                                </div>
                 <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -157,7 +168,7 @@ does nothing.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_fromConnectionDefaults">
-        <div class="location">at line         line 165</div>
+        <div class="location">at line         line 182</div>
         <code>        static            <a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a>
     <strong>fromConnectionDefaults</strong>()
         </code>
@@ -168,7 +179,8 @@ does nothing.</p>                                </div>
 
                     <div class="method-description">
                                     <p>Returns a new Ghostly object. The database connection values are the defaults
-from the $_ENV superglobal.</p>                                </div>
+from the $_ENV superglobal.</p>                    <p>Once the Ghostly object has been returned, no new Ghostly objects can be created
+until the close() method has been invoked.</p>            </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -188,7 +200,7 @@ from the $_ENV superglobal.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_fromConnection">
-        <div class="location">at line         line 183</div>
+        <div class="location">at line         line 207</div>
         <code>        static            <a href="../../Ghostly/Core/Ghostly.html"><abbr title="Ghostly\Core\Ghostly">Ghostly</abbr></a>
     <strong>fromConnection</strong>(string $host = &#039;&#039;, int $port = &#039;&#039;, string $database = &#039;&#039;, string $user = null, string $pass = null, boolean $persistent = true)
         </code>
@@ -199,7 +211,10 @@ from the $_ENV superglobal.</p>                                </div>
 
                     <div class="method-description">
                                     <p>Returns a new Ghostly object with the specified database connection parameters.</p>                    <p>If no parameters are specified explicitly, the configuration for the connection is
-read from values in the $_ENV superglobal.</p>            </div>
+read from values in the $_ENV superglobal.</p>
+
+<p>Once the Ghostly object has been returned, no new Ghostly objects can be created
+until the close() method has been invoked.</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
