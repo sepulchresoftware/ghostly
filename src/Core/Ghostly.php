@@ -227,6 +227,15 @@ class Ghostly
 	}
 
 	/**
+	 * Returns whether there is an active database connection.
+	 *
+	 * @return boolean
+	 */
+	public function hasActiveConnection() {
+		return !(is_null($this->pdo));
+	}
+
+	/**
 	 * Creates and returns the DSN string for a MySQL connection. The values are
 	 * read from the values provided when this class is instantiated.
 	 *
