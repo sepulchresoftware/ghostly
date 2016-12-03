@@ -41,5 +41,21 @@ class BaseModel
 	 */
 	public function __construct() {
 		$this->ghostly = Ghostly::fromConnectionDefaults();
+		$this->data = [];
+	}
+
+	/**
+	 * Retrieves dynamic attributes based on data received. Returns null if the
+	 * appropriate attribute cannot be resolved.
+	 *
+	 * @param string $key The name of the attribute to retrieve
+	 * @return string|int|null
+	 */
+	public function __get($key) {
+		if(array_key_exists($key, $this->data)) {
+			return $this->data[$key];
+		}
+
+		return null;
 	}
 }
